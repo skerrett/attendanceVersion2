@@ -1,6 +1,7 @@
 package com.example.attendanceversion2;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Movie;
 import android.net.Uri;
@@ -30,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity implements LessonAdapter.
     private AttendanceApi attendanceApi;
     private LessonAdapter lessonAdapter;
     private ArrayList<LessonResponse> LessonList;
+    public static final String EXTRA_NUMBER = "com.example.attendanceversion2.EXTRA_NUMBER";
 
 
     @Override
@@ -102,7 +104,10 @@ public class ProfileActivity extends AppCompatActivity implements LessonAdapter.
 
             LessonResponse clickeditem = LessonList.get(postion);
 
-            clickeditem.getId();
+
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.putExtra(EXTRA_NUMBER, clickeditem.getId());
+            startActivity(intent);
 
         }
 

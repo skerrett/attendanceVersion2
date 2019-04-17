@@ -19,7 +19,7 @@ public interface AttendanceApi {
 
 
     @PATCH("mobile/present")
-    Call<JsonElement>patchStudent(@Query("input") int input,
+    Call<JsonElement>patchStudent(@Query("input") long input,
                                   @Query("lesson") int lesson);
 
     @FormUrlEncoded

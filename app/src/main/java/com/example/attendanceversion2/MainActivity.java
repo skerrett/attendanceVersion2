@@ -50,6 +50,7 @@ public class MainActivity extends Activity {
                 .build();
 
         attendanceApi = retrofit.create(AttendanceApi.class);
+
     }
 
     public void onPause() {
@@ -70,13 +71,14 @@ public class MainActivity extends Activity {
         int signedInt = wrapped.getInt();
         long number = signedInt & 0xffffffffl;
         label.setText("Tag detected: " + number);
-        updateStudent();
+        int text = intent.getIntExtra(ProfileActivity.EXTRA_NUMBER,0);
+        updateStudent(text,number);
     }
 
-    private void updateStudent(){
+    private void updateStudent(int text,long number){
         Student student = new Student();
 
-        Call<JsonElement> call = attendanceApi.patchStudent(5,1);
+        Call<JsonElement> call = attendanceApi.patchStudent(number,text);
 
         call.enqueue(new Callback<JsonElement>() {
             @Override
