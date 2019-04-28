@@ -63,7 +63,7 @@
                     android:singleLine="true"
                     android:drawableLeft="@drawable/lock"
                     android:drawableTint="#FF4081"
-                    android:hint="Password"
+                    android:hint="@string/Password"
                     android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
                 android:background="#d67601"
-                android:text="Sign in"
+                android:text="@string/Sign_in"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="18sp" />
