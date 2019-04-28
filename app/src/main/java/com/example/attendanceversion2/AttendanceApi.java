@@ -5,7 +5,9 @@ import com.google.gson.JsonObject;
 
 import java.util.List;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -19,8 +21,8 @@ public interface AttendanceApi {
 
 
     @PATCH("mobile/present")
-    Call<JsonElement>patchStudent(@Query("input") long input,
-                                  @Query("lesson") int lesson);
+    Call<ResponseBody> patchStudent(@Query("input") String input,
+                                    @Query("lesson") int lesson);
 
     @FormUrlEncoded
     @PUT("mobile/login")

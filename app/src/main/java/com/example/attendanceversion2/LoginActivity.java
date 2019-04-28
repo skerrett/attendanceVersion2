@@ -8,6 +8,7 @@ import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -76,6 +77,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     if (!response.isSuccessful()) {
                         Log.d("Code:" , ""+ response.code());
+                        editTextPassword.setError("Bad Combo Try Again");
+                        editTextPassword.requestFocus();
                         return;
                     }
                     else {

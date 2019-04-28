@@ -31,7 +31,6 @@ public class ProfileActivity extends AppCompatActivity implements LessonAdapter.
     private AttendanceApi attendanceApi;
     private LessonAdapter lessonAdapter;
     private ArrayList<LessonResponse> LessonList;
-    public static final String EXTRA_NUMBER = "com.example.attendanceversion2.EXTRA_NUMBER";
 
 
     @Override
@@ -87,6 +86,7 @@ public class ProfileActivity extends AppCompatActivity implements LessonAdapter.
                 }
                 lessonAdapter = new LessonAdapter(getApplicationContext(), LessonList);
                 RecyclerView.setAdapter(lessonAdapter);
+                lessonAdapter.setOnItemClickListnerer(ProfileActivity.this);
 
             }
 
@@ -103,11 +103,11 @@ public class ProfileActivity extends AppCompatActivity implements LessonAdapter.
         public void onItemClick(int postion) {
 
             LessonResponse clickeditem = LessonList.get(postion);
-
-
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.putExtra(EXTRA_NUMBER, clickeditem.getId());
-            startActivity(intent);
+            int number = clickeditem.getId();
+            Log.d("ID = ", number+"");
+            Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
+            intent.putExtra("ID", number);
+            ProfileActivity.this.startActivity(intent);
 
         }
 

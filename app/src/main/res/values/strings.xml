@@ -10,6 +10,11 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+    <string name="Present_Card">Please Present your card</string>
+    <string name="success">Success</string>
+    <string name="wait">Please wait request being sent</string>
+    <string name="Error">Error: Card does not belong to any student in this class</string>
+
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
